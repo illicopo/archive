@@ -36,44 +36,8 @@
     Для роботи з rar архівами, вам потрібно встановити пакунки rar або unrar.
 
 
-
-''' 
+```bash
 #!/bin/bash
-
-# Функція для запакування файлів в архіви
-create_archive() {
-    local file=$1
-    local archive_format=$2
-
-    # Перевірка, чи існує файл
-    if [ ! -f "$file" ]; then
-        echo "Файл $file не знайдено."
-        return
-    fi
-
-    # Запакування в залежності від формату
-    case "$archive_format" in
-        zip)
-            zip "$file.zip" "$file"
-            echo "Запаковано $file в $file.zip"
-            ;;
-        tar)
-            tar -cvf "$file.tar" "$file"
-            echo "Запаковано $file в $file.tar"
-            ;;
-        tgz)
-            tar -czvf "$file.tar.gz" "$file"
-            echo "Запаковано $file в $file.tar.gz"
-            ;;
-        rar)
-            rar a "$file.rar" "$file"
-            echo "Запаковано $file в $file.rar"
-            ;;
-        *)
-            echo "Невідомий формат для запаковки: $archive_format"
-            ;;
-    esac
-}
 
 # Функція для розпаковки архівів
 extract_archive() {
@@ -155,4 +119,3 @@ else
     extract_archive "$1"
 fi
 
-'''
