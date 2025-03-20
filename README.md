@@ -17,7 +17,7 @@
 
     Запакувати файл file.txt у формат rar:
 
-./extract.sh --rar file.txt
+    ./extract.sh --rar file.txt
 
 Запакувати файл file.txt у формат zip:
 
